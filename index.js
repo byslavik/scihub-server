@@ -36,7 +36,6 @@ var cors = require('cors');
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use(cors());
 var port = process.env.PORT || 8083;        // set our port
 
@@ -50,7 +49,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-    res.sendFile('./index.html');
+    res.sendFile('index.html', { root: './' });
 });
 
 
